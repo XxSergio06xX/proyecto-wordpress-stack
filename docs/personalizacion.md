@@ -37,10 +37,10 @@
 
 ### 3 entradas repartidas en 2 categorías
 - **Categoría: Novedades**
-  1. *Lanzamiento oficial de la plataforma web:* Anuncio de la puesta en marcha de la infraestructura web basada en contenedores. Contiene la imagen adjunta `foto1.jpg`.
-  2. *Nueva actualización de seguridad y rendimiento:* Detalle de los ajustes aplicados en PHP-FPM y Nginx. Contiene la imagen adjunta `foto2.png`.
+  1. *Lanzamiento oficial de la plataforma web:* Anuncio de la puesta en marcha de la infraestructura web basada en contenedores. Contiene la imagen adjunta `mordecai.jpg`.
+  2. *Nueva actualización de seguridad y rendimiento:* Detalle de los ajustes aplicados en PHP-FPM y Nginx. Contiene la imagen adjunta `vegeta.png`.
 - **Categoría: Tutoriales**
-  3. *Cómo desplegar WordPress con Docker Compose y Nginx:* Guía paso a paso sobre el levantamiento modular de los servicios. Contiene la imagen adjunta `foto3-grande.jpg`.
+  3. *Cómo desplegar WordPress con Docker Compose y Nginx:* Guía paso a paso sobre el levantamiento modular de los servicios. Contiene la imagen adjunta `chorizo carajo.webp`.
 
 ### Menú principal
 - Creado en **Apariencia → Menús** con el nombre `Menú Principal` y asignado a la ubicación principal (**Primary Menu**) del tema Astra.
@@ -54,10 +54,10 @@
 
 ## 3. Subida de imágenes y persistencia en volumen (Paso 4)
 
-Se han subido 3 imágenes a la biblioteca de medios de WordPress, incluyendo una imagen grande para comprobar la capacidad y los límites de subida:
-1. `foto1.jpg` (~8.2 KB, formato JPEG).
-2. `foto2.png` (~4.0 KB, formato PNG).
-3. `foto3-grande.jpg` (5.8 MB, formato JPEG de alta resolución).
+Se han subido las 3 imágenes a la biblioteca de medios de WordPress:
+1. `mordecai.jpg` (42 KB, formato JPEG).
+2. `vegeta.png` (297 KB, formato PNG).
+3. `chorizo carajo.webp` (11 KB, formato WebP).
 
 ### Verificación del volumen en el contenedor
 Al ejecutar el comando indicado en la guía:
@@ -74,18 +74,22 @@ Se comprueba que las imágenes se organizan correctamente por año y mes dentro 
 10
 
 /var/www/html/wp-content/uploads/2026/10:
-foto1-150x150.jpg          foto2-300x225.png          foto3-grande-1536x1229.jpg
-foto1-300x225.jpg          foto2-768x576.png          foto3-grande-2048x1638.jpg
-foto1-768x576.jpg          foto2.png                  foto3-grande-300x240.jpg
-foto1.jpg                  foto3-grande-1024x819.jpg  foto3-grande-768x614.jpg
-foto2-150x150.png          foto3-grande-150x150.jpg   foto3-grande.jpg
+chorizo-carajo-150x150.webp
+chorizo-carajo-300x267.webp
+chorizo-carajo.webp
+mordecai-150x150.jpg
+mordecai-300x233.jpg
+mordecai.jpg
+vegeta-150x150.png
+vegeta-295x300.png
+vegeta.png
 ```
 
 ---
 
 ## 4. Configuración de límites de PHP en Git (Paso 6)
 
-Para permitir la subida de archivos de gran tamaño (como `foto3-grande.jpg`), se configuró el archivo [config/uploads.ini](file:///home/sersalgom2/Documents/proyecto-wordpress-stack/config/uploads.ini):
+Para gestionar cargas en el servidor y asegurar la configuración requerida, se configuró el archivo [config/uploads.ini](file:///home/sersalgom2/Documents/proyecto-wordpress-stack/config/uploads.ini):
 ```ini
 ; Límites de PHP para WordPress
 upload_max_filesize = 64M
@@ -122,10 +126,10 @@ upload_max_filesize => 64M => 64M
 #### Tema final personalizado (Astra)
 ![Tema después](img/tema-despues.png)
 
-### Portada estática con Menú, Últimas Entradas y Galería de Imágenes
+### Portada estática con Menú, Últimas Entradas y Galería de Imágenes (Mordecai, Vegeta y Chorizo Carajo)
 ![Portada estática completa](img/portada-completa.png)
 
-### Detalle de entrada con imagen asociada (Prueba de subida pesada)
+### Detalle de entrada con imagen asociada
 ![Entrada individual](img/entrada-detalle.png)
 
 ### Formulario de contacto (Plugin WPForms Lite)
