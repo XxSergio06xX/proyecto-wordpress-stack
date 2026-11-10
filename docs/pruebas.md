@@ -1,7 +1,7 @@
 # Pruebas de funcionamiento y rendimiento
 | Prueba | Resultado | ¿Correcto? |
 |---|---|---|
-| Servicios en marcha |db |ngix wordpress | Correcto
+| Servicios en marcha |db ngix wordpress | Correcto
 | Sitio y panel | Los dos se pueden ver con el tema incluido. | Correcto
 | Subida de ficheros |Las imagenes se han subido correctamente. | Correcto
 | Enlaces permanentes |Todas las entradas cargan sin errores. | Correcto
