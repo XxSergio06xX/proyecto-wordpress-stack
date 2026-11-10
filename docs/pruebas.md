@@ -1,12 +1,12 @@
 # Pruebas de funcionamiento y rendimiento
 | Prueba | Resultado | ¿Correcto? |
 |---|---|---|
-| Servicios en marcha |db |ngix |wordpress
-| Sitio y panel | Los dos se pueden ver con el tema incluido.
-| Subida de ficheros |Las imagenes se han subido correctamente.
-| Enlaces permanentes |Todas las entradas cargan sin errores.
-| Persistencia (down/up) |El contenido no ha sido borrado.
-| Seguridad (403) |El mensaje 403 Forbidden ha salido.
+| Servicios en marcha |db |ngix wordpress | Correcto
+| Sitio y panel | Los dos se pueden ver con el tema incluido. | Correcto
+| Subida de ficheros |Las imagenes se han subido correctamente. | Correcto
+| Enlaces permanentes |Todas las entradas cargan sin errores. | Correcto
+| Persistencia (down/up) |El contenido no ha sido borrado. | Correcto
+| Seguridad (403) |El mensaje 403 Forbidden ha salido. | Correcto
 
 ## Rendimiento
 - Tiempos de respuesta en el aula (5 medidas):
