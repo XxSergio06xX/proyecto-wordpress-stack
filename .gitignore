@@ -2,3 +2,5 @@
 wp-content/
 mysql/
 db_data/
+backups/
+logs/

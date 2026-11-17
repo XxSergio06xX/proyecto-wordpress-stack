@@ -38,3 +38,11 @@ Se ha utilizado el wrapper `./wp` conectado al contenedor Docker de WordPress pa
 ## 3. Limpieza de Plugins Inactivos y Control de Versiones
 * **Endurecimiento (*Hardening*):** Se han desactivado y eliminado completamente los plugins preinstalados sin uso (`akismet` y `hello`) mediante `./wp plugin delete akismet hello` para reducir la superficie de exposición ante posibles vulnerabilidades.
 * **Control de versiones en Git:** Se ha configurado `.gitignore` para excluir datos sensibles (`.env`) y volúmenes persistentes (`wp-content/`, `mysql/`, `db_data/`), subiendo únicamente la infraestructura como código (`docker-compose.yml`), el script `./wp` y la documentación a la rama `ra3-admin`.
+
+---
+
+## 4. Copias de Seguridad Automatizadas y Restauración (Práctica 2)
+
+- **Estrategia de respaldo:** Implementación de `scripts/backup.sh` y `scripts/restore.sh` para volcar MariaDB (`mariadb-dump --single-transaction`) y empaquetar `wp-content` desde el contenedor `wordpress`, con rotación automática de 7 copias y verificación con `gzip -t`.
+- **Automatización:** Tarea programada en `cron` (`30 13 * * 2,3`) ejecutando `./scripts/backup.sh` hacia `backups/backup.log`.
+- **Prueba de restauración:** Se creó la copia `20261117-181137`, se eliminaron la entrada `ID 106` (*"Jope macho"*) y el plugin `flamingo`, y tras ejecutar `./scripts/restore.sh 20261117-181137` confirmando con `SI`, se verificó mediante `./wp post list` y `./wp plugin list` la recuperación completa de datos y plugins.
