@@ -1,0 +1,4 @@
+.env
+wp-content/
+mysql/
+db_data/
